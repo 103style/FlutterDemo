@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+// Flex 框( Row 和 Column )
+//当一个 flex 框嵌套在另外一个 flex 框或者嵌套在可滚动区域内时，不能使用 Expanded
+
 void main() {
   var title = 'layout demo';
 
@@ -16,7 +19,7 @@ void main() {
 
 class Body extends StatelessWidget {
   Widget titleSection = Container(
-    padding: const EdgeInsets.all(32),
+    padding: const EdgeInsets.all(16),
     child: Row(
       children: [
         Expanded(
@@ -93,7 +96,7 @@ class Body extends StatelessWidget {
   );
 
   Widget textSection = Container(
-    padding: const EdgeInsets.all(32),
+    padding: const EdgeInsets.all(16),
     child: Text(
       'Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese '
       'Alps. Situated 1,578 meters above sea level, it is one of the '
