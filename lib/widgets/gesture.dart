@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
 
+import '../common/common_utils.dart';
+
+var title = 'Flutter Tutorial';
+
 void main() {
-  runApp(MaterialApp(
-    title: 'Flutter Tutorial',
-    home: MyButton(),
-  ));
+  runApp(Gesuture());
+}
+
+class Gesuture extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return CommonBackTitle(
+      title: title,
+      bodyWidget: MyButton(),
+    );
+  }
 }
 
 class MyButton extends StatelessWidget {

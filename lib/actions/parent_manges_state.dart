@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  var title = 'parent manages widget’s  state';
+import '../common/common_utils.dart';
 
-  runApp(MaterialApp(
-    title: title,
-    home: Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      body: ParentWidget(),
-    ),
-  ));
+var title = 'parent manages widget’s  state';
+
+void main() {
+  runApp(ParentManagesState());
+}
+
+class ParentManagesState extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return CommonBackTitle(
+      title: title,
+      bodyWidget: ParentWidget(),
+    );
+  }
 }
 
 class ParentWidget extends StatefulWidget {

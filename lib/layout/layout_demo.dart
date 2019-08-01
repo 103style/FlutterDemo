@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
 
+import '../common/common_utils.dart';
+
 // Flex 框( Row 和 Column )
 //当一个 flex 框嵌套在另外一个 flex 框或者嵌套在可滚动区域内时，不能使用 Expanded
 
-void main() {
-  var title = 'layout demo';
+var title = 'layout demo';
 
-  runApp(MaterialApp(
-    title: title,
-    home: Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      body: Body(),
-    ),
-  ));
+void main() {
+  runApp(LayoutDemo());
+}
+
+class LayoutDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return CommonBackTitle(
+      title: title,
+      bodyWidget: Body(),
+    );
+  }
 }
 
 class Body extends StatelessWidget {

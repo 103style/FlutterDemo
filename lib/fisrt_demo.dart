@@ -1,15 +1,14 @@
 // add  english_words: ^3.1.0  in  pubspec.yaml -> dependencies
 
-
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(FirstDemo());
 
 //var title = "Welcome to Flutter";
 var title = "Startup Name Generator";
 
-class MyApp extends StatelessWidget {
+class FirstDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -44,7 +43,7 @@ class RandomWordsState extends State<RandomWords> {
       new MaterialPageRoute<void>(
         builder: (BuildContext context) {
           final Iterable<ListTile> tiles = _saveSet.map(
-                (WordPair wordPair) {
+            (WordPair wordPair) {
               return new ListTile(
                 title: new Text(
                   wordPair.asPascalCase,

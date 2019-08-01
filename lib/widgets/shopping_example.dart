@@ -1,23 +1,35 @@
 import 'package:flutter/material.dart';
 
+import '../common/common_utils.dart';
+
+var title = 'Shopping example';
+
 void main() {
-  var title = 'Shopping example';
-  runApp(MaterialApp(
-    title: title,
-    home: Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      body: ShoppingList(
-        products: <Product>[
-          Product(name: 'Eggs'),
-          Product(name: 'Flour'),
-          Product(name: 'rice'),
-          Product(name: 'oil'),
-        ],
-      ),
-    ),
-  ));
+  runApp(ShoppingExample());
+}
+
+class ShoppingExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return CommonBackTitle(
+      title: title,
+      bodyWidget: Body(),
+    );
+  }
+}
+
+class Body extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ShoppingList(
+      products: <Product>[
+        Product(name: 'Eggs'),
+        Product(name: 'Flour'),
+        Product(name: 'rice'),
+        Product(name: 'oil'),
+      ],
+    );
+  }
 }
 
 class Product {

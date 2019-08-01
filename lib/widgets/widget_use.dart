@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
 
+import '../common/common_utils.dart';
+
+var title = 'WidgetUse';
+
 void main() {
-  runApp(MaterialApp(
-    title: 'My App',
-    home: MyScaffold(),
-  ));
+  runApp(WidgetUse());
+}
+
+class WidgetUse extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return CommonBackTitle(
+      title: title,
+      bodyWidget: MyScaffold(),
+    );
+  }
 }
 
 class MyAppBar extends StatelessWidget {

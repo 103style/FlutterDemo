@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 
+import '../common/common_utils.dart';
+
+var title = 'Listener';
+
 void main() {
-  var title = 'Listener';
-  runApp(MaterialApp(
-    title: title,
-    home: Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      body: Counter(),
-    ),
-  ));
+  runApp(ClickListener());
+}
+
+class ClickListener extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return CommonBackTitle(
+      title: title,
+      bodyWidget: Counter(),
+    );
+  }
 }
 
 class Counter extends StatefulWidget {

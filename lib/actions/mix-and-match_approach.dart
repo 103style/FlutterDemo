@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  var title = 'A mix-and-match approach';
+import '../common/common_utils.dart';
 
-  runApp(MaterialApp(
-    title: title,
-    home: Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      body: ParentWidget(),
-    ),
-  ));
+var title = 'A mix-and-match approach';
+
+void main() {
+  runApp(MixAndMatchApproach());
+}
+
+class MixAndMatchApproach extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return CommonBackTitle(
+      title: title,
+      bodyWidget: ParentWidget(),
+    );
+  }
 }
 
 class ParentWidget extends StatefulWidget {

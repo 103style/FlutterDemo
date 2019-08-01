@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  var title = 'manages own state';
+import '../common/common_utils.dart';
 
-  runApp(MaterialApp(
-    title: title,
-    home: Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      body: TapboxA(),
-    ),
-  ));
+var title = 'manages own state';
+
+void main() {
+  runApp(ManagersOwnState());
+}
+
+class ManagersOwnState extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return CommonBackTitle(
+      title: title,
+      bodyWidget: TapboxA(),
+    );
+  }
 }
 
 class TapboxA extends StatefulWidget {

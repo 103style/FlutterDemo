@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 
+import '../common/common_utils.dart';
+
+var title = 'update with input';
+
 void main() {
-  var title = 'update with input';
-  runApp(MaterialApp(
-    title: title,
-    home: Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      body: Counter(),
-    ),
-  ));
+  runApp(UpdateWithInput());
+}
+
+class UpdateWithInput extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return CommonBackTitle(
+      title: title,
+      bodyWidget: Counter(),
+    );
+  }
 }
 
 class Counter extends StatefulWidget {
