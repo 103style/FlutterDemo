@@ -11,19 +11,26 @@ import 'widgets/widgets_demo.dart';
 var title = 'Flutter Demo';
 
 void main() {
-  runApp(CommonTitle(
-    title: title,
-    bodyWidget: Body(),
-  ));
+  runApp(FlutterDemo());
+}
+
+class FlutterDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return CommonTitle(
+      title: title,
+      bodyWidget: Body(),
+    );
+  }
 }
 
 class Body extends StatelessWidget {
   Widget _navigator(BuildContext context, String title, Widget widget) {
     return GestureDetector(
       child: Container(
-        margin: const EdgeInsets.only(left: 8.0, right: 8.0, top: 8.0),
+        margin: const EdgeInsets.only(left: 8.0, right: 8.0, top: 4.0),
         child: MaterialButton(
-          color: Colors.red,
+          color: Colors.lightBlue,
           child: Text(
             title,
             style: TextStyle(color: Colors.white),

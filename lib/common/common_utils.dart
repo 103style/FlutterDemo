@@ -1,5 +1,27 @@
 import 'package:flutter/material.dart';
 
+class CommonRounterTitle extends StatelessWidget {
+  String title;
+  Widget bodyWidget;
+  Map<String, WidgetBuilder> routes;
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: title,
+      home: null, //当使用 initialRoute 时，需要确保你没有同时定义 home 属性。
+      initialRoute: '/',
+      routes: routes,
+    );
+  }
+
+  CommonRounterTitle({
+    @required this.title,
+    @required this.bodyWidget,
+    @required this.routes,
+  });
+}
+
 class CommonTitle extends StatelessWidget {
   String title;
   Widget bodyWidget;
@@ -17,7 +39,10 @@ class CommonTitle extends StatelessWidget {
     );
   }
 
-  CommonTitle({@required this.title, @required this.bodyWidget});
+  CommonTitle({
+    @required this.title,
+    @required this.bodyWidget,
+  });
 }
 
 class CommonBackTitle extends StatelessWidget {
@@ -43,7 +68,10 @@ class CommonBackTitle extends StatelessWidget {
     );
   }
 
-  CommonBackTitle({@required this.title, @required this.bodyWidget});
+  CommonBackTitle({
+    @required this.title,
+    @required this.bodyWidget,
+  });
 }
 
 class CommonBackColorTitle extends StatelessWidget {
@@ -71,6 +99,9 @@ class CommonBackColorTitle extends StatelessWidget {
     );
   }
 
-  CommonBackColorTitle(
-      {@required this.title, @required this.bodyWidget, @required this.color});
+  CommonBackColorTitle({
+    @required this.title,
+    @required this.bodyWidget,
+    @required this.color,
+  });
 }
