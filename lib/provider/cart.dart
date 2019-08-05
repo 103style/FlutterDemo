@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../common/common_utils.dart';
 import '../provider/cart_model.dart';
 
 void main() => runApp(MyCart());
@@ -8,13 +9,10 @@ void main() => runApp(MyCart());
 class MyCart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Cart', style: Theme.of(context).textTheme.display4),
-        backgroundColor: Colors.white,
-      ),
-      body: Container(
-        color: Colors.yellow,
+    return CommonBackTitle(
+      title: 'Cart',
+      bodyWidget: Container(
+//        color: Colors.yellow,
         child: Column(
           children: [
             Expanded(
@@ -29,6 +27,27 @@ class MyCart extends StatelessWidget {
         ),
       ),
     );
+//    return Scaffold(
+//      appBar: AppBar(
+//        title: Text('Cart', style: Theme.of(context).textTheme.display4),
+//        backgroundColor: Colors.white,
+//      ),
+//      body: Container(
+//        color: Colors.yellow,
+//        child: Column(
+//          children: [
+//            Expanded(
+//              child: Padding(
+//                padding: const EdgeInsets.all(32),
+//                child: _CartList(),
+//              ),
+//            ),
+//            Divider(height: 4, color: Colors.black),
+//            _CartTotal()
+//          ],
+//        ),
+//      ),
+//    );
   }
 }
 
@@ -71,8 +90,11 @@ class _CartTotal extends StatelessWidget {
                 Scaffold.of(context).showSnackBar(
                     SnackBar(content: Text('Buying not supported yet.')));
               },
-              color: Colors.white,
-              child: Text('BUY'),
+              color: Colors.blue,
+              child: Text(
+                'BUY',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ],
         ),

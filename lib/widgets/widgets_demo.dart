@@ -48,9 +48,9 @@ class Body extends StatelessWidget {
     return ListView(
       children: <Widget>[
         _navigator(context, 'WidgetUse', WidgetUse()),
-        _navigator(context, 'Flutter Tutorial', Tutorial()),
-        _navigator(context, 'ClickListener', ClickListener()),
-        _navigator(context, 'Gesuture', Gesuture()),
+//        _navigator(context, 'Flutter Tutorial', Tutorial()),
+//        _navigator(context, 'ClickListener', ClickListener()),
+//        _navigator(context, 'Gesuture', Gesuture()),
         _navigator(context, 'UpdateWithInput', UpdateWithInput()),
         _navigator(context, 'ShoppingExample', ShoppingExample()),
       ],

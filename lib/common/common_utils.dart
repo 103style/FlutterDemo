@@ -105,3 +105,35 @@ class CommonBackColorTitle extends StatelessWidget {
     @required this.color,
   });
 }
+
+class CommonBackAndActionTitle extends StatelessWidget {
+  String title;
+  Widget bodyWidget;
+  List<Widget> actions;
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: title,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(title),
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+          actions: actions,
+        ),
+        body: bodyWidget,
+      ),
+    );
+  }
+
+  CommonBackAndActionTitle({
+    @required this.title,
+    @required this.bodyWidget,
+    @required this.actions,
+  });
+}

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../common/common_utils.dart';
 
 import '../provider/cart_model.dart';
 import '../provider/catalog_model.dart';
@@ -9,17 +10,51 @@ void main() => runApp(MyCatalog());
 class MyCatalog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: CustomScrollView(
+    return CommonBackAndActionTitle(
+      title: 'Catalog',
+      bodyWidget: CustomScrollView(
         slivers: [
-          _MyAppBar(),
           SliverToBoxAdapter(child: SizedBox(height: 12)),
           SliverList(
             delegate: SliverChildBuilderDelegate(
-                (context, index) => _MyListItem(index)),
+                    (context, index) => _MyListItem(index)),
           ),
         ],
       ),
+      actions: <Widget>[
+        IconButton(
+          icon: Icon(Icons.shopping_cart),
+          onPressed: () => Navigator.pushNamed(context, '/cart'),
+        ),
+      ],
+    );
+//    return Scaffold(
+//      body: CustomScrollView(
+//        slivers: [
+//          _MyAppBar(),
+//          SliverToBoxAdapter(child: SizedBox(height: 12)),
+//          SliverList(
+//            delegate: SliverChildBuilderDelegate(
+//                (context, index) => _MyListItem(index)),
+//          ),
+//        ],
+//      ),
+//    );
+  }
+}
+
+class _MyAppBar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SliverAppBar(
+      title: Text('Catalog', style: Theme.of(context).textTheme.display4),
+      floating: true,
+      actions: [
+        IconButton(
+          icon: Icon(Icons.shopping_cart),
+          onPressed: () => Navigator.pushNamed(context, '/cart'),
+        ),
+      ],
     );
   }
 }
@@ -43,21 +78,6 @@ class _AddButton extends StatelessWidget {
   }
 }
 
-class _MyAppBar extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return SliverAppBar(
-      title: Text('Catalog', style: Theme.of(context).textTheme.display4),
-      floating: true,
-      actions: [
-        IconButton(
-          icon: Icon(Icons.shopping_cart),
-          onPressed: () => Navigator.pushNamed(context, '/cart'),
-        ),
-      ],
-    );
-  }
-}
 
 class _MyListItem extends StatelessWidget {
   final int index;

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'platform/custom_platform.dart';
+
 import 'actions/action_demo.dart';
 import 'common/common_utils.dart';
 import 'fisrt_demo.dart';
 import 'hello_world.dart';
-import 'layout/layout_demo.dart';
 import 'layout/layout_demo_with_action.dart';
-import 'widgets/widgets_demo.dart';
+import 'platform/custom_platform.dart';
 import 'provider/shop_provider_demo.dart';
+import 'widgets/widgets_demo.dart';
 
 var title = 'Flutter Demo';
 
@@ -48,7 +48,7 @@ class Body extends StatelessWidget {
         _navigator(context, 'First Demo', FirstDemo()),
         _navigator(context, 'Action Demo', ActionDemo()),
         _navigator(context, 'Widgets Demo', WidgetsDemo()),
-        _navigator(context, 'layout demo', LayoutDemo()),
+//        _navigator(context, 'layout demo', LayoutDemo()),
         _navigator(context, 'layout demo with action', LayoutDemoWithAction()),
         _navigator(context, 'ShopProviderDemo', ShopProviderDemo()),
         _navigator(context, 'CustomPlatForm', CustomPlatForm()),
