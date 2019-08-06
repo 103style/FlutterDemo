@@ -1,30 +1,26 @@
 import 'package:flutter/material.dart';
 
-class CommonRounterTitle extends StatelessWidget {
-  String title;
-  Widget bodyWidget;
-  Map<String, WidgetBuilder> routes;
+class CommonRouterTitle extends StatelessWidget {
+  final Map<String, WidgetBuilder> routes;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: title,
-      home: null, //当使用 initialRoute 时，需要确保你没有同时定义 home 属性。
+      //当使用 initialRoute 时，需要确保你没有同时定义 home 属性。
+      //home: null,
       initialRoute: '/',
       routes: routes,
     );
   }
 
-  CommonRounterTitle({
-    @required this.title,
-    @required this.bodyWidget,
+  CommonRouterTitle({
     @required this.routes,
   });
 }
 
 class CommonTitle extends StatelessWidget {
-  String title;
-  Widget bodyWidget;
+  final String title;
+  final Widget bodyWidget;
 
   @override
   Widget build(BuildContext context) {
@@ -46,8 +42,8 @@ class CommonTitle extends StatelessWidget {
 }
 
 class CommonBackTitle extends StatelessWidget {
-  String title;
-  Widget bodyWidget;
+  final String title;
+  final Widget bodyWidget;
 
   @override
   Widget build(BuildContext context) {
@@ -75,9 +71,9 @@ class CommonBackTitle extends StatelessWidget {
 }
 
 class CommonBackColorTitle extends StatelessWidget {
-  String title;
-  Widget bodyWidget;
-  Color color;
+  final String title;
+  final Widget bodyWidget;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -107,9 +103,9 @@ class CommonBackColorTitle extends StatelessWidget {
 }
 
 class CommonBackAndActionTitle extends StatelessWidget {
-  String title;
-  Widget bodyWidget;
-  List<Widget> actions;
+  final String title;
+  final Widget bodyWidget;
+  final List<Widget> actions;
 
   @override
   Widget build(BuildContext context) {
